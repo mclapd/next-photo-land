@@ -2,7 +2,7 @@ import ProductSlideViewer from "./ProductSlideVeiwer";
 
 const getProducts = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/products", {
+    const res = await fetch("https://next-photo-land.vercel.app/api/products", {
       cache: "no-store",
     });
 
