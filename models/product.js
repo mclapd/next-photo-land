@@ -6,7 +6,7 @@ const productSchema = new Schema({
   description: String,
   price: String,
   title: String,
-  isNew: Boolean,
+  // isNew: Boolean,
 });
 
 const Product =

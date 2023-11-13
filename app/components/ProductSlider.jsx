@@ -16,7 +16,7 @@ const getProducts = async () => {
 };
 
 const ProductSlider = async () => {
-  const { products } = await getProducts();
+  const { products } = (await getProducts()) || {};
 
   return (
     <div>

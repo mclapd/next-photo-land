@@ -3,9 +3,10 @@ import connectMongoDB from "@/libs/mongodb";
 import Product from "@/models/product";
 
 export async function POST(req) {
-  const { title, description } = await req.json();
+  const { image, category, description, price, title, isNew } =
+    await req.json();
   await connectMongoDB();
-  await Product.create({ title, description });
+  await Product.create({ image, category, description, price, title, isNew });
   return NextResponse.json({ message: "Product Created" }, { status: 201 });
 }
 
