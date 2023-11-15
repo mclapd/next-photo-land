@@ -268,18 +268,6 @@ const useProdcutsStore = create((set) => ({
       title: "Sigma FP Digital Camera Full Frame 24.6MP Body",
       isNew: true,
     },
-    {
-      _id: {
-        $oid: "654c919422e6a09966d9f542",
-      },
-      image:
-        "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/mirrorless/olp6kh9cxfqorweu0zp1",
-      category: "mirrorless",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae ante purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae",
-      price: "1000",
-      title: "Canon EOS R6 Photo Camera Mirrorless Full-Frame 20.1 M",
-    },
   ],
 }));
 

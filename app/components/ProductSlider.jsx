@@ -1,6 +1,6 @@
 "use client";
 
-import useProdcutsStore from "@/libs/store";
+import useProdcutsStore from "@/libs/productsstore";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "../slider.css";
