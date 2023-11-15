@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Product = ({ product }) => {
   return (
-    <Link href={"#"}>
+    <Link href={`/product/${product._id}`}>
       <div className="grad w-full h-[362px] rounded-[8px] overflow-hidden group">
         <div className="w-full h-[200px] flex items-center justify-center relative">
           {product.isNew ? (

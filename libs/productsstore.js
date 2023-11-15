@@ -1,6 +1,14 @@
 import { create } from "zustand";
 
 const useProdcutsStore = create((set) => ({
+  isCartOpen: false,
+  setIsCartOpen: (status) => set({ isCartOpen: status }),
+  itemAmount: 0,
+  setItemAmount: (value) => set({ itemAmount: value }),
+  amount: 0,
+  setAmount: (value) => set({ amount: value }),
+  total: 0,
+  setTotal: (value) => set({ total: value }),
   categories: [
     {
       id: 1,
@@ -25,9 +33,7 @@ const useProdcutsStore = create((set) => ({
   ],
   products: [
     {
-      _id: {
-        $oid: "654c773c492da6a22b714bb7",
-      },
+      _id: "1",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/compact/yqynubthpkglxfw7gyzo",
       category: "compact",
@@ -39,9 +45,7 @@ const useProdcutsStore = create((set) => ({
       isNew: false,
     },
     {
-      _id: {
-        $oid: "654c7ded22e6a09966d9f52e",
-      },
+      _id: "2",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/compact/ujtcd5ts5pgvjxl6qxmm",
       category: "compact",
@@ -52,9 +56,7 @@ const useProdcutsStore = create((set) => ({
       isNew: false,
     },
     {
-      _id: {
-        $oid: "654c80f822e6a09966d9f530",
-      },
+      _id: "3",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/compact/qmpxn74no594k0mzjlg7",
       category: "compact",
@@ -66,9 +68,7 @@ const useProdcutsStore = create((set) => ({
       isNew: true,
     },
     {
-      _id: {
-        $oid: "654c838522e6a09966d9f531",
-      },
+      _id: "4",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/compact/jthlvrv0fw6uriiwy8ha",
       category: "compact",
@@ -79,9 +79,7 @@ const useProdcutsStore = create((set) => ({
       isNew: false,
     },
     {
-      _id: {
-        $oid: "654c83bb22e6a09966d9f532",
-      },
+      _id: "5",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/compact/vwjckpwdhlmzytxkc4fd",
       category: "compact",
@@ -93,9 +91,7 @@ const useProdcutsStore = create((set) => ({
       isNew: true,
     },
     {
-      _id: {
-        $oid: "654c840822e6a09966d9f533",
-      },
+      _id: "6",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/dslr/pzsurceenycpeo9jaab8",
       category: "dslr",
@@ -106,9 +102,7 @@ const useProdcutsStore = create((set) => ({
       isNew: false,
     },
     {
-      _id: {
-        $oid: "654c843c22e6a09966d9f534",
-      },
+      _id: "7",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/dslr/pmixdque3x1gpwug9s98",
       category: "dslr",
@@ -119,9 +113,7 @@ const useProdcutsStore = create((set) => ({
       isNew: true,
     },
     {
-      _id: {
-        $oid: "654c847122e6a09966d9f535",
-      },
+      _id: "8",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/dslr/fktgn3g7gch8orfrg7vx",
       category: "dslr",
@@ -133,9 +125,7 @@ const useProdcutsStore = create((set) => ({
       isNew: false,
     },
     {
-      _id: {
-        $oid: "654c84a522e6a09966d9f536",
-      },
+      _id: "9",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/dslr/h6vvxwvv60jlask2doao",
       category: "dslr",
@@ -146,9 +136,7 @@ const useProdcutsStore = create((set) => ({
       isNew: false,
     },
     {
-      _id: {
-        $oid: "654c84d022e6a09966d9f537",
-      },
+      _id: "10",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/dslr/pudz1fq8r3nlhhlorzni",
       category: "dslr",
@@ -159,9 +147,7 @@ const useProdcutsStore = create((set) => ({
       isNew: true,
     },
     {
-      _id: {
-        $oid: "654c850922e6a09966d9f538",
-      },
+      _id: "11",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/film/doxagthspxn8pox2dwsj",
       category: "flim",
@@ -172,9 +158,7 @@ const useProdcutsStore = create((set) => ({
       isNew: false,
     },
     {
-      _id: {
-        $oid: "654c854322e6a09966d9f539",
-      },
+      _id: "12",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/film/vfixevoqgcihphiuocu3",
       category: "flim",
@@ -185,9 +169,7 @@ const useProdcutsStore = create((set) => ({
       isNew: false,
     },
     {
-      _id: {
-        $oid: "654c903022e6a09966d9f53a",
-      },
+      _id: "13",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/film/ufzjym3thyfkks87cy70",
       category: "flim",
@@ -198,9 +180,7 @@ const useProdcutsStore = create((set) => ({
       isNew: false,
     },
     {
-      _id: {
-        $oid: "654c905822e6a09966d9f53b",
-      },
+      _id: "14",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/film/h3o5ayzuamtqb6xivh4d",
       category: "flim",
@@ -211,9 +191,7 @@ const useProdcutsStore = create((set) => ({
       isNew: true,
     },
     {
-      _id: {
-        $oid: "654c907d22e6a09966d9f53c",
-      },
+      _id: "15",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/film/iw95myrzvee55v68qo1u",
       category: "flim",
@@ -224,9 +202,7 @@ const useProdcutsStore = create((set) => ({
       isNew: "false",
     },
     {
-      _id: {
-        $oid: "654c90c022e6a09966d9f53d",
-      },
+      _id: "16",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/mirrorless/it7mow02umfkxgjcarlm",
       category: "mirrorless",
@@ -237,9 +213,7 @@ const useProdcutsStore = create((set) => ({
       isNew: false,
     },
     {
-      _id: {
-        $oid: "654c910322e6a09966d9f53e",
-      },
+      _id: "17",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/mirrorless/todz4zqo2mumqon1umhm",
       category: "mirrorless",
@@ -251,9 +225,7 @@ const useProdcutsStore = create((set) => ({
       isNew: true,
     },
     {
-      _id: {
-        $oid: "654c912222e6a09966d9f53f",
-      },
+      _id: "18",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/mirrorless/w8pdq8iu482pyehsqeo4",
       category: "mirrorless",
@@ -265,9 +237,7 @@ const useProdcutsStore = create((set) => ({
       isNew: false,
     },
     {
-      _id: {
-        $oid: "654c914222e6a09966d9f540",
-      },
+      _id: "19",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/mirrorless/fyzgoujt68arhtlgwgl8",
       category: "mirrorless",
@@ -278,9 +248,7 @@ const useProdcutsStore = create((set) => ({
       isNew: true,
     },
     {
-      _id: {
-        $oid: "654c916522e6a09966d9f541",
-      },
+      _id: "20",
       image:
         "https://res.cloudinary.com/de0shfirh/image/upload/f_auto,q_auto/v1/photo-land/professional/nr27qppgaxvnbtorpwnn",
       category: "professional",

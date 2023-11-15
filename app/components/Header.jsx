@@ -9,9 +9,10 @@ import { FiMenu } from "react-icons/fi";
 import SearchForm from "./SearchForm";
 import CategoryNavMobile from "./CategoryNavMobile";
 import Cart from "./Cart";
+import useProdcutsStore from "@/libs/productsstore";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isCartOpen, setIsCartOpen } = useProdcutsStore();
   const [catNavMobile, setCatNavMobile] = useState(false);
 
   return (
@@ -42,7 +43,7 @@ const Header = () => {
               Need help? 123 456 789
             </div>
             <div
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setIsCartOpen(!isCartOpen)}
               className="relative cursor-pointer"
             >
               <SlBag className="text-2xl" />
@@ -52,7 +53,7 @@ const Header = () => {
             </div>
             <div
               className={`${
-                isOpen ? "right-0" : "-right-full"
+                isCartOpen ? "right-0" : "-right-full"
               } bg-[#0e0f10] shadow-xl fixed top-0 bottom-0 w-full z-10 md:max-w-[500px] transition-all duration-300`}
             >
               <Cart />
