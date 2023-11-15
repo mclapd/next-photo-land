@@ -4,9 +4,7 @@ import useProdcutsStore from "@/libs/productsstore";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "../slider.css";
-import Product from "./Product";
 import CameraImg from "../../public/images/camera.png";
-import Link from "next/link";
 import Image from "next/image";
 
 const sliderData = [
