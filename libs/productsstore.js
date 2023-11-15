@@ -1,6 +1,28 @@
 import { create } from "zustand";
 
 const useProdcutsStore = create((set) => ({
+  categories: [
+    {
+      id: 1,
+      title: "compact",
+    },
+    {
+      id: 2,
+      title: "dslr",
+    },
+    {
+      id: 3,
+      title: "flim",
+    },
+    {
+      id: 4,
+      title: "mirrorless",
+    },
+    {
+      id: 5,
+      title: "professional",
+    },
+  ],
   products: [
     {
       _id: {

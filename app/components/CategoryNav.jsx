@@ -4,8 +4,7 @@ import useProdcutsStore from "@/libs/productsstore";
 import Link from "next/link";
 
 const CategoryNav = () => {
-  const categories = ["compact", "dslr", "flim", "mirrorless", "professional"];
-  // const { products } = useProdcutsStore();
+  const { categories } = useProdcutsStore();
 
   return (
     <aside className="hidden xl:flex">
@@ -16,8 +15,12 @@ const CategoryNav = () => {
         <div className="flex flex-col gap-y-6 p-6">
           {categories.map((category, index) => {
             return (
-              <Link key={index} href={"#"} className="cursor-pointer uppercase">
-                {category}
+              <Link
+                key={index}
+                href={`/products/${category.title}`}
+                className="cursor-pointer uppercase"
+              >
+                {category.title}
               </Link>
             );
           })}
