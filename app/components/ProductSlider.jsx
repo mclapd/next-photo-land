@@ -1,8 +1,14 @@
-import ProductSlideViewer from "./ProductSlideVeiwer";
+"use client";
+
+import useProdcutsStore from "@/libs/store";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "../slider.css";
+import Product from "./Product";
 
 const getProducts = async () => {
   try {
-    const res = await fetch("https://next-photo-land.vercel.app/api/products", {
+    const res = await fetch("http://localhost:3000/api/products", {
       cache: "no-store",
     });
 
@@ -15,13 +21,41 @@ const getProducts = async () => {
   }
 };
 
-const ProductSlider = async () => {
-  const { products } = (await getProducts()) || {};
+const ProductSlider = () => {
+  const { products } = useProdcutsStore();
 
   return (
-    <div>
-      <ProductSlideViewer products={products} />
-    </div>
+    <Swiper
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1140: {
+          slidesPerView: 5,
+          spaceBetween: 30,
+        },
+      }}
+      className="productSlider mx-auto max-w-[360px] md:max-w-lg xl:max-w-[1410px]"
+    >
+      <>
+        {products.map((product, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <Product product={product} />
+            </SwiperSlide>
+          );
+        })}
+      </>
+    </Swiper>
   );
 };
 
