@@ -3,9 +3,18 @@ import Link from "next/link";
 import { IoClose } from "react-icons/io5";
 import Qty from "./Qty";
 import useCartStore from "@/libs/cartstore";
+import { useEffect } from "react";
 
 const CartItem = ({ purchasedProduct }) => {
-  const { removeCart } = useCartStore();
+  const { removeCart, setCartAmount, cart } = useCartStore();
+
+  useEffect(() => {
+    const amount = cart.reduce((a, c) => {
+      return a + c.amount;
+    }, 0);
+
+    setCartAmount(amount);
+  }, [cart, setCartAmount]);
 
   return (
     <div className="flex gap-x-8">
@@ -37,7 +46,7 @@ const CartItem = ({ purchasedProduct }) => {
             <div className="flex gap-x-4 mb-2">
               <Qty purchasedProduct={purchasedProduct} />
               <div className="text-accent text-xl">
-                $ {purchasedProduct.price}
+                $ {purchasedProduct.price * purchasedProduct.amount}
               </div>
             </div>
           </div>

@@ -12,7 +12,7 @@ import Cart from "./Cart";
 import useCartStore from "@/libs/cartstore";
 
 const Header = () => {
-  const { isCartOpen, setIsCartOpen, cart } = useCartStore();
+  const { isCartOpen, setIsCartOpen, cart, cartAmount } = useCartStore();
   const [catNavMobile, setCatNavMobile] = useState(false);
 
   return (
@@ -48,7 +48,7 @@ const Header = () => {
             >
               <SlBag className="text-2xl" />
               <div className="bg-accent text-primary absolute w-[18px] h-[18px] rounded-full top-3 -right-1 text-[13px] flex justify-center items-center font-bold tracking-[-0.1em]">
-                {cart.length}
+                {cartAmount}
               </div>
             </div>
             <div
