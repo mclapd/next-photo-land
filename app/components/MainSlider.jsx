@@ -54,11 +54,12 @@ const MainSlider = () => {
                 </div>
                 <div className="flex-1">
                   <Image
-                    className="xl:absolute xl:-right-16 xl:-bottom-12"
+                    className="xl:absolute xl:-right-16 xl:-bottom-12 w-auto"
                     src={slide.img}
                     width={608}
                     height={481}
                     alt="image"
+                    priority
                   />
                 </div>
               </div>

@@ -9,10 +9,10 @@ import { FiMenu } from "react-icons/fi";
 import SearchForm from "./SearchForm";
 import CategoryNavMobile from "./CategoryNavMobile";
 import Cart from "./Cart";
-import useProdcutsStore from "@/libs/productsstore";
+import useCartStore from "@/libs/cartstore";
 
 const Header = () => {
-  const { isCartOpen, setIsCartOpen } = useProdcutsStore();
+  const { isCartOpen, setIsCartOpen, cart } = useCartStore();
   const [catNavMobile, setCatNavMobile] = useState(false);
 
   return (
@@ -48,7 +48,7 @@ const Header = () => {
             >
               <SlBag className="text-2xl" />
               <div className="bg-accent text-primary absolute w-[18px] h-[18px] rounded-full top-3 -right-1 text-[13px] flex justify-center items-center font-bold tracking-[-0.1em]">
-                2
+                {cart.length}
               </div>
             </div>
             <div

@@ -1,14 +1,6 @@
 import { create } from "zustand";
 
 const useProdcutsStore = create((set) => ({
-  isCartOpen: false,
-  setIsCartOpen: (status) => set({ isCartOpen: status }),
-  itemAmount: 0,
-  setItemAmount: (value) => set({ itemAmount: value }),
-  amount: 0,
-  setAmount: (value) => set({ amount: value }),
-  total: 0,
-  setTotal: (value) => set({ total: value }),
   categories: [
     {
       id: 1,

@@ -19,6 +19,7 @@ const Product = ({ product }) => {
             height={100}
             alt="image"
             className="w-160px] h-[160px group-hover:scale-90 transition-all"
+            priority
           />
         </div>
         <div className="px-6 pb-8 flex flex-col">

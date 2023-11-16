@@ -3,15 +3,26 @@
 import RelatedProducts from "@/app/components/RelatedProducts";
 import useProdcutsStore from "@/libs/productsstore";
 import Image from "next/image";
-import { addToCart } from "@/libs/cartContext";
+import useCartStore from "@/libs/cartstore";
 
 const ProductDetails = ({ params }) => {
   const { products } = useProdcutsStore();
+  const { addCart } = useCartStore();
   const targetProduct = products.find((item) => item._id === params.productid);
 
   if (!targetProduct) {
     return <div className="container mx-auto">loading...</div>;
   }
+
+  // const cartAddHandler = () => {
+  //   console.log("cartAddHandler");
+  //   // return (
+  //   //   <div>
+  //   //     <CartContext />
+  //   //   </div>
+  //   // );
+  //   AddToCart(targetProduct);
+  // };
 
   return (
     <div className="mb-16 pt-44 lg:pt-[30px] xl:pt-0">
@@ -24,6 +35,7 @@ const ProductDetails = ({ params }) => {
               height={1200}
               alt="image"
               className="w-full max-w-[65%]"
+              priority
             />
           </div>
           <div className="flex-1 bg-primary p-12 xl:p-20 rounded-lg flex flex-col justify-center">
@@ -36,7 +48,10 @@ const ProductDetails = ({ params }) => {
               <div className="text-3xl text-accent font-semibold">
                 ${targetProduct.price}
               </div>
-              <button onClick={() => addToCart()} className="btn btn-accent">
+              <button
+                onClick={() => addCart(targetProduct)}
+                className="btn btn-accent"
+              >
                 Add to cart
               </button>
             </div>
