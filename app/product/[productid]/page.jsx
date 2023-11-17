@@ -14,16 +14,6 @@ const ProductDetails = ({ params }) => {
     return <div className="container mx-auto">loading...</div>;
   }
 
-  // const cartAddHandler = () => {
-  //   console.log("cartAddHandler");
-  //   // return (
-  //   //   <div>
-  //   //     <CartContext />
-  //   //   </div>
-  //   // );
-  //   AddToCart(targetProduct);
-  // };
-
   return (
     <div className="mb-16 pt-44 lg:pt-[30px] xl:pt-0">
       <div className="container mx-auto">

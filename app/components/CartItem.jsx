@@ -6,15 +6,24 @@ import useCartStore from "@/libs/cartstore";
 import { useEffect } from "react";
 
 const CartItem = ({ purchasedProduct }) => {
-  const { removeCart, setCartAmount, cart } = useCartStore();
+  const { removeCart, cartAmount, setCartAmount, cart } = useCartStore();
 
   useEffect(() => {
+    console.log("USEEFFECT");
     const amount = cart.reduce((a, c) => {
       return a + c.amount;
     }, 0);
 
     setCartAmount(amount);
   }, [cart, setCartAmount]);
+
+  const cartRemoveHanlder = () => {
+    if (cartAmount - purchasedProduct.amount >= 0)
+      setCartAmount(cartAmount - purchasedProduct.amount);
+    else setCartAmount(0);
+
+    removeCart(purchasedProduct._id);
+  };
 
   return (
     <div className="flex gap-x-8">
@@ -35,7 +44,7 @@ const CartItem = ({ purchasedProduct }) => {
             {purchasedProduct.title}
           </Link>
           <div
-            onClick={() => removeCart(purchasedProduct._id)}
+            onClick={cartRemoveHanlder}
             className="cursor-pointer text-[24px] hover:text-accent transition-all"
           >
             <IoClose />
