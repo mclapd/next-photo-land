@@ -7,8 +7,8 @@ const useCartStore = create((set) => ({
   setItemAmount: (value) => set({ itemAmount: value }),
   cartAmount: 0,
   setCartAmount: (value) => set({ cartAmount: value }),
-  total: 0,
-  setTotal: (value) => set({ total: value }),
+  cartTotal: 0,
+  setCartTotal: (value) => set({ cartTotal: value }),
   cart: [],
   addCart: (newObject) =>
     set((state) => {
@@ -28,6 +28,7 @@ const useCartStore = create((set) => ({
       const newArray = state.cart.filter((obj) => obj._id !== objectId);
       return { cart: newArray };
     }),
+  clearCart: () => set({ cart: [] }),
 }));
 
 export default useCartStore;

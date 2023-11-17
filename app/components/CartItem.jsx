@@ -6,16 +6,24 @@ import useCartStore from "@/libs/cartstore";
 import { useEffect } from "react";
 
 const CartItem = ({ purchasedProduct }) => {
-  const { removeCart, cartAmount, setCartAmount, cart } = useCartStore();
+  const { removeCart, cartAmount, setCartAmount, setCartTotal, cart } =
+    useCartStore();
 
   useEffect(() => {
-    console.log("USEEFFECT");
     const amount = cart.reduce((a, c) => {
       return a + c.amount;
     }, 0);
 
     setCartAmount(amount);
   }, [cart, setCartAmount]);
+
+  useEffect(() => {
+    const total = cart.reduce((a, c) => {
+      return a + c.price * c.amount;
+    }, 0);
+
+    setCartTotal(total);
+  }, [cart, setCartTotal]);
 
   const cartRemoveHanlder = () => {
     if (cartAmount - purchasedProduct.amount >= 0)

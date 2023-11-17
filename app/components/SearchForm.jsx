@@ -23,10 +23,9 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(searchTerm);
 
     if (searchTerm.length > 0) {
-      router.push(`search?query=${searchTerm}`);
+      router.push(`/search?query=${searchTerm}`);
       document.querySelector("input").value = "";
       setSearchTerm("");
     } else {
