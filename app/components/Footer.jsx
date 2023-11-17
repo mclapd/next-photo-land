@@ -33,7 +33,7 @@ const Footer = () => {
             Shipping & delivery
           </Link>
         </div>
-        <div>
+        <div className="flex gap-x-6 max-w-max mx-auto text-lg mb-16">
           <Link href={"#"} className="hover:text-white transition-all">
             <FaYoutube />
           </Link>
